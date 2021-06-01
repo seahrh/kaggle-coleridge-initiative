@@ -3,3 +3,5 @@ include *.ini
 recursive-include models model.h5
 recursive-include models model.txt
 graft pretrained
+prune pretrained/spacy
+prune pretrained/bert-large-uncased-whole-word-masking-finetuned-squad
