@@ -89,9 +89,11 @@ def qa_predict(
     model: AutoModelForQuestionAnswering,
     tokenizer: AutoTokenizer,
     questions: Iterable[str],
-    n_window: int,
+    max_window: int,
     max_length: int = 1_000_000,
     max_tokens: int = 512,
+    ans_min_length: int = 3,
+    ans_max_length: int = 150,
     verbose: bool = False,
 ) -> Callable:
     def fn(row) -> str:
@@ -113,7 +115,7 @@ def qa_predict(
             return ""
         res = set()
         for question in questions:
-            for _ in range(n_window):
+            for _ in range(max_window):
                 if len(sentences) == 0:
                     break
                 inputs = _pack_sentences(
@@ -140,7 +142,7 @@ def qa_predict(
                     tokenizer.convert_ids_to_tokens(input_ids[ai:aj])
                 )
                 a = clean_text(a)
-                if len(a) < 4 or len(a) > 150:
+                if len(a) < ans_min_length or len(a) > ans_max_length:
                     continue
                 n_digits = snlp.count_digit(a)
                 if n_digits > 4 or n_digits / len(a) > 0.2:
