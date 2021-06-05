@@ -5,3 +5,4 @@ recursive-include models model.txt
 graft pretrained
 prune pretrained/spacy
 prune pretrained/bert-large-uncased-whole-word-masking-finetuned-squad
+prune pretrained/distilbert-base-cased-distilled-squad
