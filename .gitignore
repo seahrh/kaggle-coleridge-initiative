@@ -1,6 +1,7 @@
 input/
 output/
 pretrained/
+tmp/
 .idea/
 
 # Byte-compiled / optimized / DLL files
