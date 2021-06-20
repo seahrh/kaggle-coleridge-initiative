@@ -1,8 +1,7 @@
 exclude *.ipynb
 include *.ini
-recursive-include models model.h5
-recursive-include models model.txt
-graft pretrained
+graft models/electra_small/20210620_1500
+#graft pretrained
 prune pretrained/spacy
 prune pretrained/bert-large-uncased-whole-word-masking-finetuned-squad
 prune pretrained/distilbert-base-cased-distilled-squad
