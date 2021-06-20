@@ -17,7 +17,7 @@ setup(
         "scikit-learn==0.24.1",
         "sentence-transformers==1.0.4",
         "spacy==2.3.5",
-        "tensorflow==2.4.1",
+        "tensorflow==2.5.0",
         "transformers==4.5.1",
     ],
     extras_require={
