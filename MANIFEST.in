@@ -1,4 +1,5 @@
 exclude *.ipynb
 include *.ini
-graft models/electra_small/20210620_2100
+graft models/electra_small/20210620_1500
+graft models/electra_small/20210621_0900
 #graft pretrained/google/electra-small-discriminator
