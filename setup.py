@@ -18,7 +18,7 @@ setup(
         "sentence-transformers==1.0.4",
         "spacy==2.3.5",
         "tensorflow==2.5.0",
-        "transformers==4.5.1",
+        "transformers==4.8.1",
     ],
     extras_require={
         "tests": [
